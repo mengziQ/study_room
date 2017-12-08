@@ -41,7 +41,7 @@ if n/1 >= 1:
 
 if n/0.5 >= 1:
   min_half = min([price_list[0]*2, price_list[1]])
-  cost = cost + min0_half * int(n/0.5)
+  cost = cost + min_half * int(n/0.5)
   #print('0.5L通過時のコスト' , cost)
   n = n - 0.5 * int(n/0.5)
 
