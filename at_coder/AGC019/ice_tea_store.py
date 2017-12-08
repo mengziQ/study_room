@@ -16,8 +16,6 @@ except Exception as e:
   print(e)
   exit()
 
-#print(len(price_list))
-
 if 1 > int(input_line2) or int(input_line2) > pow(10, 9): 
   print('買えるアイスティーの量は1〜10^9までです')
   exit()
