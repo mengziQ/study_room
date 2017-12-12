@@ -1,10 +1,5 @@
-m1, m2 = input().split(' ')
-if 0 > int(m1) or  int(m1) > pow(10, 9) or 0 > int(m2) or int(m2) > pow(10, 9):
-  print('入力値は0〜10の9乗までです')
-  exit()
+# map関数を使ってint型にする
+m1, m2 = map(int, input().split())
 
-if int(m1) > int(m2):
-  print(m1)
-else:
-  print(m2)
-
+# max関数を使う。なるほどねー！
+print(max(m1, m2))

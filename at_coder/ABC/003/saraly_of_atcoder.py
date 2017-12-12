@@ -1,17 +1,13 @@
-task = input()
+task = int(input())
 
-if 4 > int(task) or 100 < int(task):
-  print('タスク数は4以上100以下で入力してください')
-  exit
+salary = 0
 
-idx = 0
-avg_salary = 0
+# for文を使う。インクリメントは書かなくても大丈夫。in句の後はlenではなくrangeでないといけない。
+# in句の後は、int型ではなくリストでないといけないから。
+for i in range(task + 1):
+  salary += int(i * 10000)
 
-while idx <= int(task):
-  avg_salary += 10000 * idx * (1/int(task))
-  idx += 1
+salary = int(salary / task)
 
-avg_salary = int(round(avg_salary, 0))
-
-print(str(avg_salary) + '\n')
+print(salary)
 
