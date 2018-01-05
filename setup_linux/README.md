@@ -42,4 +42,5 @@ git入ってた  
 $ python3 -c "import IPython;print(IPython.lib.passwd())"
 ```
 - 表示されたハッシュ値をコピーして、jupyter_notebook_config.pyとjupyter_notebook_config.jsonに反映させる  
+
 -　　これでjupyterの設定はOK、ただ、クラウド側でアクセスが制限されている可能性があるので、解除する。(AWSだと、自分のEC2に紐づいているセキュリティグループの「インバウンド接続にルールを追加する。具体的には、「全てのIP」から(0.0.0.0/0)、「TCP」で「ポート8888」を許可する。)  
