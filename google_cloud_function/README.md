@@ -9,7 +9,7 @@ lambdaでGCFを起動させて、GCFでEC2をシャットダウンする。  
 
 ## 実装でハマったポイント  
 - GCPではDebianのインスタンスを作成して、そこで上記作業をしていたが、pypyがうまく動かなかった。ubuntu(yuri)で動かしたら動いた。  
-- AWSのIAMユーザーにアタッチするポリシーは「AWSAdmin」でないと動かない。  
+- AWSのIAMユーザーにアタッチするポリシーは「AdministratorAccess」でないと動かない。  
 - Lambda関数の関数コードはzipファイルをアップロードしたが、この時、zipファイルの作成方法が特殊。ディレクトリごと圧縮してはいけない。aws_lambda_driverの中身のみを圧縮する。コマンドは以下のイメージ。  
 ```
 $ cd aws_lambda_driver
