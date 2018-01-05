@@ -1,5 +1,5 @@
 # Google Cloud Functionを使う  
-参考レポジトリ：[google-cloud-function-pythonic](https://github.com/GINK03/google-cloud-function-pythonic)
+参考レポジトリ：[google-cloud-function-pythonic](https://github.com/GINK03/google-cloud-function-pythonic)  
 仕事で、EC2を定期的にシャットダウンするためにGoogle Cloud FunctionとLambdaを使いました。  
 なんでGoogleCloud Function使ったんだろう？笑  
 
