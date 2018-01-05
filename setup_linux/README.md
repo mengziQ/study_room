@@ -32,8 +32,7 @@ git入ってた  
 今度記載します  
 
 ## 5. jupyter notebookの導入  
-参考URL：　[jupyter-dotfiles](https://github.com/GINK03/jupyter-dotfiles)  
-[Jupyter事始め](https://qiita.com/taka4sato/items/2c3397ff34c440044978)  
+参考URL：　[jupyter-dotfiles](https://github.com/GINK03/jupyter-dotfiles) [Jupyter事始め](https://qiita.com/taka4sato/items/2c3397ff34c440044978)  
 
 - まず、「$ sudo pip3 install jupyter」を実行してインストール  
 - .jupyterフォルダを作成し、上記リポジトリの.jupyterフォルダの中身を配置する  
@@ -43,4 +42,4 @@ $ python3 -c "import IPython;print(IPython.lib.passwd())"
 ```
 - 表示されたハッシュ値をコピーして、jupyter_notebook_config.pyとjupyter_notebook_config.jsonに反映させる  
 
--　　これでjupyterの設定はOK、ただ、クラウド側でアクセスが制限されている可能性があるので、解除する。(AWSだと、自分のEC2に紐づいているセキュリティグループの「インバウンド接続にルールを追加する。具体的には、「全てのIP」から(0.0.0.0/0)、「TCP」で「ポート8888」を許可する。)  
+- これでjupyterの設定はOK、ただ、クラウド側でアクセスが制限されている可能性があるので、解除する。(AWSだと、自分のEC2に紐づいているセキュリティグループの「インバウンド接続にルールを追加する。具体的には、「全てのIP」から(0.0.0.0/0)、「TCP」で「ポート8888」を許可する。)  
