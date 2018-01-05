@@ -12,8 +12,8 @@ lambdaでGCFを起動させて、GCFでEC2をシャットダウンする。  
 - AWSのIAMユーザーにアタッチするポリシーは「AWSAdmin」でないと動かない。  
 - Lambda関数の関数コードはzipファイルをアップロードしたが、この時、zipファイルの作成方法が特殊。ディレクトリごと圧縮してはいけない。aws_lambda_driverの中身のみを圧縮する。コマンドは以下のイメージ。  
 ```
-$ cd lambda_sample
-$ zip -r ../lambda_sample .
+$ cd aws_lambda_driver
+$ zip -r ../aws_lambda_driver .
 ```
 
 ## 仕組み その2「スマホのショートカットから実行」  
