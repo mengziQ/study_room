@@ -50,5 +50,5 @@ $ python3 -c "import IPython;print(IPython.lib.passwd())"
 乞うご期待  
 
 ## 7. goofysの導入  
-参考URL：(goofys setup and how to use it)[https://gink03.github.io/goofys/]  
+参考URL：[goofys setup and how to use it](https://gink03.github.io/goofys/)  
 AWSのS3をマウントする予定があるなら入れる。    
