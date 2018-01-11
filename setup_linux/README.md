@@ -54,31 +54,9 @@ $ python3 -c "import IPython;print(IPython.lib.passwd())"
 参考URL：[goofys setup and how to use it](https://gink03.github.io/goofys/)  
 AWSのS3をマウントする予定があるなら入れる。    
 
-## 8. JDK9の導入  
-参考URL：[Debian系Linuxへ
-Oracle JDKをインストールする](http://astah.change-vision.com/ja/feature/install-linux-debian.html)  
-
-### 8-1. Debian GNUでの導入方法  
-GCPのVMがDebian GNUだったので、Debianでの方法も調べた。(ubuntuと同じかも)    
-作業環境： Debian GNU 9.2  
-
-1. bit数を確認  
+## 8. JDK8の導入  
+以下のコマンドを実行。(DebianもUbuntuも共通)  
 ```
-$ uname -m
+sudo apt install openjdk-8-jdk
 ```
-2. [ここ](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html)から該当するファイルをダウンロードする。(tar.gz形式が良いかも)  
-
-3. tar.gzファイルを解凍する  
-```
-$tar -xvf jdk-9.0.1_linux-x64_bin.tar.gz
-```
-4. 出力されたディレクトリを/usr/libフォルダに移動させる
-```
-$sudo mv jdk-9.0.1 /usr/lib/
-($sudo mv ./jdk1.8.0_121 /usr/lib/jvm/jdk1.8.0)
-```
-5. 
-### 8-2. Ubuntu 16.04での導入  
-[ここ](https://qiita.com/TsutomuNakamura/items/f12fdf0a8502e634584d)を参照  
-
 
