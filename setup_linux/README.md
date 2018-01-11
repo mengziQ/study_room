@@ -11,7 +11,7 @@
 5. jupyter notebookの導入  
 6. kawaii-termの導入  
 7. goofysの導入  
-8. JDK9の導入(※Debianバージョンもあり！)  
+8. JDK8の導入  
 
 ## 1. tmuxのカスタマイズ  
 参考URL： [tmuxの設定](https://gink03.github.io/tmux/)  
