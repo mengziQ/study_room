@@ -11,7 +11,7 @@
 5. jupyter notebookの導入  
 6. kawaii-termの導入  
 7. goofysの導入  
-8. JDK8の導入(※Debianバージョンもあり！)  
+8. JDK9の導入(※Debianバージョンもあり！)  
 
 ## 1. tmuxのカスタマイズ  
 参考URL： [tmuxの設定](https://gink03.github.io/tmux/)  
@@ -54,7 +54,7 @@ $ python3 -c "import IPython;print(IPython.lib.passwd())"
 参考URL：[goofys setup and how to use it](https://gink03.github.io/goofys/)  
 AWSのS3をマウントする予定があるなら入れる。    
 
-## 8. JDK8の導入  
+## 8. JDK9の導入  
 参考URL：[Debian系Linuxへ
 Oracle JDKをインストールする](http://astah.change-vision.com/ja/feature/install-linux-debian.html)  
 
@@ -66,7 +66,19 @@ GCPのVMがDebian GNUだったので、Debianでの方法も調べた。(ubuntu�
 ```
 $ uname -m
 ```
-2. 64bitだったので、JDKのファイルをインストールしてくる。本来はwebサイト上からoracleのライセンス同意しなければならないが、クッキーに「ライセンス同意」の情報を持たせることで、wgetコマンドで直接ダウンロード可能のようです。[Linuxでjdkをwgetする方法](https://qiita.com/hajimeni/items/67d9e9b0d169bf68d1c9)  
+2. [ここ](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html)から該当するファイルをダウンロードする。(tar.gz形式が良いかも)  
+
+3. tar.gzファイルを解凍する  
 ```
-$ wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz
+$tar -xvf jdk-9.0.1_linux-x64_bin.tar.gz
 ```
+4. 出力されたディレクトリを/usr/libフォルダに移動させる
+```
+$sudo mv jdk-9.0.1 /usr/lib/
+($sudo mv ./jdk1.8.0_121 /usr/lib/jvm/jdk1.8.0)
+```
+5. 
+### 8-2. Ubuntu 16.04での導入  
+[ここ](https://qiita.com/TsutomuNakamura/items/f12fdf0a8502e634584d)を参照  
+
+
