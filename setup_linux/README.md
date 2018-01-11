@@ -11,6 +11,7 @@
 5. jupyter notebookの導入  
 6. kawaii-termの導入  
 7. goofysの導入  
+8. JDK8の導入(※Debianバージョンもあり！)  
 
 ## 1. tmuxのカスタマイズ  
 参考URL： [tmuxの設定](https://gink03.github.io/tmux/)  
@@ -52,3 +53,20 @@ $ python3 -c "import IPython;print(IPython.lib.passwd())"
 ## 7. goofysの導入  
 参考URL：[goofys setup and how to use it](https://gink03.github.io/goofys/)  
 AWSのS3をマウントする予定があるなら入れる。    
+
+## 8. JDK8の導入  
+参考URL：[Debian系Linuxへ
+Oracle JDKをインストールする](http://astah.change-vision.com/ja/feature/install-linux-debian.html)  
+
+### 8-1. Debian GNUでの導入方法  
+GCPのVMがDebian GNUだったので、Debianでの方法も調べた。(ubuntuと同じかも)    
+作業環境： Debian GNU 9.2  
+
+1. bit数を確認  
+```
+$ uname -m
+```
+2. 64bitだったので、JDKのファイルをインストールしてくる。本来はwebサイト上からoracleのライセンス同意しなければならないが、クッキーに「ライセンス同意」の情報を持たせることで、wgetコマンドで直接ダウンロード可能のようです。[Linuxでjdkをwgetする方法](https://qiita.com/hajimeni/items/67d9e9b0d169bf68d1c9)  
+```
+$ wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz
+```
