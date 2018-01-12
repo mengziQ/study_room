@@ -5,7 +5,7 @@ import re
 # https://gist.github.com/GINK03/16a75b5ec160c04bede676b6db4760a9
 
 # まずはtsv一個加工するところから
-unziped_file = zipfile.ZipFile('/home/ubuntu/repos/StormRuler/server/download/YSS_AUDIT_LOG_589429-20180111-105937133-858.tsv.zip')
+unziped_file = zipfile.ZipFile('/home/ubuntu/repos/StormRuler/server/download/YSS_AUDIT_LOG_589429-20180112-091019312-418-201710.tsv.zip')
 name = unziped_file.namelist().pop()
 opened_file = unziped_file.open(name)
 
@@ -15,6 +15,8 @@ head = next(opened_file).decode().strip()
 
 # 両端の"を削除
 keys = [re.sub('"','',ent) for ent in head.split('"\t"')]
+
+past_event = ""
 
 for f in opened_file:
   line = f.decode().strip()
@@ -29,17 +31,20 @@ for f in opened_file:
   # なんでキャンペーンだけtryで囲ったのか
   try:
     campaign_id = obj['キャンペーンID']; del obj['キャンペーンID']
+    before = obj['更新前']
   except:
     campaign_id = None
 
   event = obj['イベントタイプ']
-  before = obj['更新前']
   after = obj['更新後']
   
   # キーを'アカウントID', '日時', 'キャンペーンID'にする
   key = (account_id, day, campaign_id)
   # どのようなイベントがあるか見てみます
-  print(event, before, after)
+  if past_event != event:
+    print(event, before, after)
+  
+  past_event = event
 
   # 差額の計算
   
