@@ -5,7 +5,7 @@ import re
 # https://gist.github.com/GINK03/16a75b5ec160c04bede676b6db4760a9
 
 # まずはtsv一個加工するところから
-unziped_file = zipfile.ZipFile('/home/ubuntu/repos/StormRuler/server/download/YSS_AUDIT_LOG_589429-20180112-091019312-418-201710.tsv.zip')
+unziped_file = zipfile.ZipFile('/home/ubuntu/repos/StormRuler/server/download/YSS_AUDIT_LOG_589429-20180112-092307469-92-201709.tsv.zip')
 name = unziped_file.namelist().pop()
 opened_file = unziped_file.open(name)
 
@@ -34,6 +34,7 @@ for f in opened_file:
     before = obj['更新前']
   except:
     campaign_id = None
+    before = None
 
   event = obj['イベントタイプ']
   after = obj['更新後']
