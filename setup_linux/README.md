@@ -12,6 +12,7 @@
 6. kawaii-termの導入  
 7. goofysの導入  
 8. JDK8の導入  
+9. LightGBMの導入  
 
 ## 1. tmuxのカスタマイズ  
 参考URL： [tmuxの設定](https://gink03.github.io/tmux/)  
@@ -62,4 +63,47 @@ $ sudo apt install openjdk-8-jdk
 Ubuntu
 $ sudo apt-get install openjdk-8-jdk  
 ```
+
+## 9. LightGBMの導入(CPU版)  
+大まかな流れはコンパイルして、インストールする。  
+
+LightGBMのレポジトリをクローンする  
+```
+$ git clone https://github.com/Microsoft/LightGBM.git
+```
+LightGBMディレクトリに移動し、ビルド用ディレクトリ「build」を作成し、移動する  
+```
+$ cd LightGBM
+$ mkdir build
+$ cd build
+```
+cmakeコマンドがあるか確認  
+```
+$ which cmake 
+```
+あったら、LightGBMをビルドする  
+```
+$ cmake ..
+```
+コンンパイルする  
+```
+$ make -j8
+$ make -j2 ←こっちの方がいいかも。「」
+```
+ようやくインストール  
+```
+$ sudo make install
+```
+ちゃんと入っているか確認  
+```
+$ which lightgbm
+```
+※ちなみに、、、GPUが入っているか確認するコマンド  
+```
+$ lscpi | grep VGA 
+```
+
+
+
+
 
