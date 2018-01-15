@@ -5,7 +5,7 @@ import re
 # https://gist.github.com/GINK03/16a75b5ec160c04bede676b6db4760a9
 
 # まずはtsv一個加工するところから
-unziped_file = zipfile.ZipFile('/home/ubuntu/repos/StormRuler/server/download/YSS_AUDIT_LOG_589429-20180112-092307469-92-201709.tsv.zip')
+unziped_file = zipfile.ZipFile('/home/ubuntu/repos/StormRuler/server/download/YSS_AUDIT_LOG_589429-20180112-093959219-561.tsv.zip')
 name = unziped_file.namelist().pop()
 opened_file = unziped_file.open(name)
 
