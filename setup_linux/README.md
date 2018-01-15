@@ -100,7 +100,7 @@ $ which lightgbm
 ```
 ※ちなみに、、、GPUが入っているか確認するコマンド  
 ```
-$ lscpi | grep VGA 
+$ lspci | grep VGA 
 ```
 
 
