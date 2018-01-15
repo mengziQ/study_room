@@ -57,6 +57,9 @@ AWSのS3をマウントする予定があるなら入れる。    
 ## 8. JDK8の導入  
 以下のコマンドを実行。(DebianもUbuntuも共通)  
 ```
-sudo apt install openjdk-8-jdk
+Debian
+$ sudo apt install openjdk-8-jdk
+Ubuntu
+$ sudo apt-get install openjdk-8-jdk  
 ```
 
