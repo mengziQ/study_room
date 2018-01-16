@@ -36,3 +36,6 @@ $ which lightgbm
 ```
 $ lspci | grep VGA 
 ```
+
+## パラメーターはここを見よ  
+https://github.com/Microsoft/LightGBM/blob/master/docs/Parameters.rst
