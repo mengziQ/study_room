@@ -12,7 +12,7 @@
 6. kawaii-termの導入  
 7. goofysの導入  
 8. JDK8の導入  
-9. LightGBMの導入  
+9. mecabの導入  
 
 ## 1. tmuxのカスタマイズ  
 参考URL： [tmuxの設定](https://gink03.github.io/tmux/)  
@@ -63,6 +63,9 @@ $ sudo apt install openjdk-8-jdk
 Ubuntu
 $ sudo apt-get install openjdk-8-jdk  
 ```
+
+## 9. mecabの導入  
+参考URL:[mecab設定](https://gink03.github.io/mecab-setup/)  
 
 
 
