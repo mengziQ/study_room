@@ -66,8 +66,7 @@ $ sudo apt-get install openjdk-8-jdk
 
 ## 9. mecabの導入  
 参考URL:[mecab設定](https://gink03.github.io/mecab-setup/)  
-
-
+Ubuntuのインストールとpython3 bindingだけやった。  
 
 
 
