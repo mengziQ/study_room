@@ -26,7 +26,7 @@
 参考URL：　[neovim設定](https://gink03.github.io/neovim/)  
 - 参考URLのinit.vimのリンク先がなんかおかしいので、[ここ](https://bitbucket.org/nardtree/neovim.conf)に飛んでクローンする。  
 - クローンしたら、まず「最低限のインストール」を実施。  
-- その後、~/.confディレクトリを作成し、neovim.confの中身をコピーする。  
+- その後、~/.configディレクトリを作成し、neovim.confの中身をコピーする。  
 - nvimディレクトリ内のinit.vimに「set terminalguicolor」とあるが、画面が真っ黒になるなどのバグが発生する可能性がある。バグったらコメントアウトor削除。(ただ今回セットアップした時は、この設定はなかったです)  
 - a.txtとかa.pyをtouchコマンドで作成してからnvimで開いたらうまく動いた。(関係ないとは思うけど)  
 
