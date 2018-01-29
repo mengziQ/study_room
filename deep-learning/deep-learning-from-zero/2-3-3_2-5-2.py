@@ -33,6 +33,13 @@ def OR(x):
   elif tmp > 0:
     return 1 
 
+def XOR(x):
+  s1 = NAND(x)
+  s2 = OR(x)
+  x = [s1, s2]
+  y = AND(x)
+  return y
+
 args = sys.argv
 x1, x2 = map(int, input().split(' ')) 
 x = np.array([x1, x2])
@@ -44,3 +51,5 @@ elif args[1] == 'nand':
   print(NAND(x))
 elif args[1] == 'or':
   print(OR(x))
+elif args[1] == 'xor':
+  print(XOR(x))
