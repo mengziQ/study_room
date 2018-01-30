@@ -1,4 +1,5 @@
-import numpy as np 
+import numpy as np  
+from nnscratch import sigmoid
 
 def sigmoid(x_array):
   y = []
