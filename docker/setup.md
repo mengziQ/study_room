@@ -29,3 +29,6 @@ $ apt-get install python(3)-pip
 ## あった方が親切？  
 - neovim  
 - git  
+
+## 調査中  
+.bashrcがないのでsourceで読み込めない  
