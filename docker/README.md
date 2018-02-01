@@ -16,8 +16,8 @@ $ docker run -it ubuntu bash
 ```
 
 ### 既存のコンテナの起動  
-docker ps などで表示された既存のコンテナについて、起動させるだけなら「docker start [コンテナID]」で起動するがbashも開きたいなら以下。  
-(起動してbashも開くことをログインというようだ)
+docker ps などで表示された既存のコンテナについて、「docker start [コンテナID]」で起動させてからbashを開きたいとき以下を実行する。  
+(起動してbashを開くことをログインというようだ)
 ```
 $ docker attach [コンテナID]
 ```
