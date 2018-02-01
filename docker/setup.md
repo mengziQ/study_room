@@ -21,9 +21,10 @@ $ apt-get install python(3)-pip
 だいたいmecab使ってること多いよね。  
 (https://github.com/mengziQ/study_room/tree/master/setup_linux)参照。  
 
-## その他pipで入れたもの  
+## その他入れたもの  
 - bs4  
 - requests  
+- ssh
 
 ## あった方が親切？  
 - neovim  
