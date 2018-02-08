@@ -26,6 +26,18 @@ $ apt-get install python(3)-pip
 - requests  
 - ssh
 
+## httpによる疎結合を実施するための環境設定  
+- httpリクエスト・レスポンスでデータを送受信するためのプログラムを開発(例ではserver.pyとする)  
+- 上記プログラムの権限を変更し、/usr/binに配置してコマンドとして実行できるようにする  
+```
+chmod +x server.py
+sudo cp server.py /usr/bin
+```
+- server.pyを実行した状態でコミットし、疎結合先に受け渡す（？）  
+```
+server.py
+```
+
 ## 参考：/bin  
 ```
 bash     bzegrep  bzip2recover  chmod  dd             domainname  findmnt  gzip      lessecho  login  mktemp      nisdomainname  pwd       run-parts   ss     tar       uname       ypdomainname  zfgrep  znew
