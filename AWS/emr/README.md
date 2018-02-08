@@ -62,3 +62,28 @@ EMRのコンソールで確認。成功していると各種ステータスは�
 - ジョブ(右にスクロールするとある)の状態： COMPLETED  
 - タスク(右n)の状態：COMPLETED  
 
+## 4. 処理結果  
+wordcountを実施すると、こんな感じのファイルが出力されました。単語と出現回数が書かれています。  
+```
+ファイル名：part-00000
+
+thing. 1	
+lying 1	
+centre 1	
+do 3	
+walking 1	
+certain 1	
+roof. 1	
+once 3	
+Alice; 1	
+pleasure 1	
+Why, 2	
+seldom 1	
+lock, 1	
+After 1	
+eye 1	
+take 1	
+schoolroom, 1	
+grow 2	
+・・・・
+```
