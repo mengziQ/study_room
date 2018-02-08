@@ -559,3 +559,9 @@ zdump
 zipdetails
 ```
 
+## 参考：/usr/lib  
+```
+apt        dbus-1.0  emacsen-common  gcc       gnupg   gold-ld    locale  mime     os-release  python2.7  python3.5  ssl   systemd  tc          valgrind
+compat-ld  dpkg      file            git-core  gnupg2  ldscripts  mecab   openssh  pyshared    python3    sasl2      sudo  tar      tmpfiles.d  x86_64-linux-gnu
+```
+
