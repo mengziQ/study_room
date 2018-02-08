@@ -37,6 +37,10 @@ sudo cp server.py /usr/bin
 ```
 server.py
 ```
+- pythonのモジュールが使えなくなっていたら、一行目に以下を足す  
+```
+#!/usr/bin/python3
+```
 
 ## 参考：/bin  
 ```
