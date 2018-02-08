@@ -14,6 +14,10 @@ Dockerの操作に関する備忘録です。つまったところだけメモ�
 ```
 $ docker run -it ubuntu bash
 ```
+### イメージファイルから新規にコンテナを作成する  
+```
+$ docker run -it [REPOSITORY] bash
+```
 
 ### 既存のコンテナの起動  
 docker ps などで表示された既存のコンテナについて、「docker start [コンテナID]」で起動させてからbashを開きたいとき以下を実行する。  
