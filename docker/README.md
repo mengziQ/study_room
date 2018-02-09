@@ -20,7 +20,7 @@ $ docker run -it [REPOSITORY] bash
 ```
 ### -pオプションで、外部からアクセスされるポート番号:コンテナ側のポート番号を指定  
 ```
-$ docker run -p [in]:[out] -it [ImageID] bash
+$ docker run -p [inbound]:[outbound] -it [ImageID] bash
 ```
 
 ### 既存のコンテナの起動  
