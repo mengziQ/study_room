@@ -15,7 +15,7 @@ $ sudo apt-get install mosh
 UDPプロトコル 60000-61000  
 
 ## クライアントでやること  
-## インストール  
+### インストール  
 ```
 $ brew install mobile-shell
 ```
