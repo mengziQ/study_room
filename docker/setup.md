@@ -44,7 +44,7 @@ $ docker run -p [port1]:[port2] -it [REPOSITORY] server.py
 ※ bashを立ち上げたい場合は以下  
 ```
 bashで中のプログラムを変更するだけならpオプションはいらないかも
-$ docker run -p [port1]:[port2] -it [REPOSITORY] server.py
+$ docker run -p [port1]:[port2] -it [REPOSITORY] bash
 ```
 ※ pythonのモジュールが使えなくなっていたら、一行目に以下を足す  
 ```
