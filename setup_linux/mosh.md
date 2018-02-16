@@ -16,6 +16,7 @@ UDPプロトコル 60000-61000
 
 ## クライアントでやること  
 ### インストール  
+Homebrew入ってる前提  
 ```
 $ brew install mobile-shell
 ```
