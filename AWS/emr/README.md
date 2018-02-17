@@ -39,7 +39,7 @@ EMRのコンソールから作成する。「クラスターを作成」ボタ�
 
 ## 2. EMR実行  
 以下のコマンドを実行する。(※1で作成したクラスターのステータスが「終了済み」になる前に実行しましょう)  
-ちなみに、この工程を実施するインスタンスはAWS CLIが入っていて、stepの設定ファイルが置いてあるものならなんでもOKです。GCPでも実行できました。  
+ちなみに、この工程を実施するインスタンスはAWS CLIが入っていて、stepの設定ファイルが置いてあるものならなんでもOKです。  
 ```
 aws emr add-steps --cluster-id j-xxxxxx --steps file://./WordCount_step.json --region ap-northeast-1
 ```
