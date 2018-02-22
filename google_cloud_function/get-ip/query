@@ -1,5 +1,0 @@
-# !/usr/bin/python3
-import os
-import sys
-
-os.system('curl https://us-central1-machine-learning-173502.cloudfunctions.net/getip')
