@@ -1,1 +1,1 @@
-gcloud beta functions deploy getip --stage-bucket cloud-function-asano --trigger-http
+gcloud beta functions deploy railgun --stage-bucket cloud-function-asano --trigger-http
