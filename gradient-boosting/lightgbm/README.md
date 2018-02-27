@@ -32,7 +32,19 @@ $ sudo make install
 ```
 $ which lightgbm
 ```
-※ちなみに、、、GPUが入っているか確認するコマンド  
+
+## pythonスクリプト内からインポートしたい場合の追加処理  
+lightGBMを実行ファイル的に動かすだけなら上記の方法で問題なし。  
+ただ、pythonスクリプト内からインポートする場合は下記の処理も必要。  
+```
+$ cd LightGBM/python-package
+$ python setup.py install
+
+python3でインポートしたいなら、
+$ python3 setup.py install
+```
+
+## ちなみに、、、GPUが入っているか確認するコマンド  
 ```
 $ lspci | grep VGA 
 ```
