@@ -1,37 +1,32 @@
-# エラーとその対処法  
-## Memory Error  
-特徴量が多すぎるとメモリエラーになる。  
-nthreadで並列処理するスレッド数を決めることができ、公式ドキュメントではCPU数と同じにすることを推奨しているが、多分ほとんどエラーになるのでは？  
-少なくとも私の環境とデータ量ではメモリエラーになった。  
+## パラメーターのチューニング手順  
+scikit-learnのGridSearchCVでgrid paramsを指定します。  
+このとき、チューニングしたいパラメータを一気に指定してもいいのですが、特徴量やデータ量が多いとチューニングに時間がかかります。  
+なので、パラメータを小分けにしてチューニングしていきます。  
 
-**実行環境１（参考）**
-```
-- メモリ：　１６GB
-- CPU: 4コア
-- 特徴量数: 2000くらい
-- 学習データ数： 178300
-- テストデータ数: 44576
+パラメーターチューニングには効率が良いとされる順番があるようです。[このサイト](http://kamonohashiperry.com/archives/209)によると、以下の順番でチューニングするのが良いそうです。  
 
-nthread=1でないとメモリエラーになった。
-```
-**実行環境2（参考）** 
-``` 
-- メモリ：　32GB
-- CPU: 8コア
-- 特徴量数: 2000くらい
-- 学習データ数： 178300
-- テストデータ数: 44576
+1. 学習率と木の数  
+2. 木に関するパラメーター：　max_depth, min_child_weight, gamma, subsample, colsample_bytree
+3. 正則化パラメータ: lambda, alphaなど  
+4. 学習率を下げる  
 
-nthread=5で実行できた。
+## Scikit-learn GridSearchCVのfit関数実行ログを見る  
+verbose=3にすると以下のログが出力される
 ```
-## [LightGBM] [Warning] bagging_fraction is set=0.7, subsample=0.8 will be ignored. Current value: bagging_fraction=0.7.   
-同じパラメータに対して、Scikit-learnAPIとLightGBMで別のパラメータ名を指定している可能性あり。  
-例えば、bagging_fractionはaliasとしてcolsample_bytreeでも指定できる。どちらかに統一する必要がある。  
-※Scikit-learnのパラメータはaliasがないので、こちらに統一する。  
-
-LightGBMがチューニング中に出力する情報以外に、システム側で出力する警告文として以下の文章が出てくる。  
+Fitting 4 folds for each of 1728 candidates, totalling 6912 fits
+[CV] subsample=0.7, reg_lambda=1, boosting_type=gbdt, n_estimators=1000, learning_rate=0.06, random_state=501, reg_alpha=1, num_leaves=31, objective=regression, colsample_bytree=0.7 
+[CV]  subsample=0.7, reg_lambda=1, boosting_type=gbdt, n_estimators=1000, learning_rate=0.06, random_state=501, reg_alpha=1, num_leaves=31, objective=regression, colsample_bytree=0.7, score=0.9975824977932051, total=  16.1s
+[Parallel(n_jobs=1)]: Done   1 out of   1 | elapsed:   24.0s remaining:    0.0s
+[CV] subsample=0.7, reg_lambda=1, boosting_type=gbdt, n_estimators=1000, learning_rate=0.06, random_state=501, reg_alpha=1, num_leaves=31, objective=regression, colsample_bytree=0.7 
+[CV]  subsample=0.7, reg_lambda=1, boosting_type=gbdt, n_estimators=1000, learning_rate=0.06, random_state=501, reg_alpha=1, num_leaves=31, objective=regression, colsample_bytree=0.7, score=0.9979117721237265, total=  16.5s
+[Parallel(n_jobs=1)]: Done   2 out of   2 | elapsed:   48.5s remaining:    0.0s
+[CV] subsample=0.7, reg_lambda=1, boosting_type=gbdt, n_estimators=1000, learning_rate=0.06, random_state=501, reg_alpha=1, num_leaves=31, objective=regression, colsample_bytree=0.7 
+[CV]  subsample=0.7, reg_lambda=1, boosting_type=gbdt, n_estimators=1000, learning_rate=0.06, random_state=501, reg_alpha=1, num_leaves=31, objective=regression, colsample_bytree=0.7, score=0.9981020341201355, total=  16.5s
+・・・
 ```
-/usr/local/lib/python3.5/dist-packages/lightgbm/engine.py:99: UserWarning: Found `num_iteration` in params. Will use it instead of argument
-  warnings.warn("Found `{}` in params. Will use it instead of argument".format(alias))  
+### 実行時間の見積  
+totalling fitsの回数と、1回の交差検証のtotalの秒数を見ることで分かる。  
+上記の例であれば、
 ```
-上記だと、「num_iteration」がScikit-learn側にないパラメータなので警告が出ていると思われる。  
+6912　×　約16秒 = 110592秒 = 30.72時間  
+```
