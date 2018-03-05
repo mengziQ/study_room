@@ -1,4 +1,4 @@
-## Scikit-learnのfit関数実行ログを見る  
+## Scikit-learn GridSearchCVのfit関数実行ログを見る  
 verbose=3にすると以下のログが出力される
 ```
 Fitting 4 folds for each of 1728 candidates, totalling 6912 fits
