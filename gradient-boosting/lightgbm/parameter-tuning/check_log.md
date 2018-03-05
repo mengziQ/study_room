@@ -1,3 +1,15 @@
+## パラメーターのチューニング手順  
+scikit-learnのGridSearchCVでgrid paramsを指定します。  
+このとき、チューニングしたいパラメータを一気に指定してもいいのですが、特徴量やデータ量が多いとチューニングに時間がかかります。  
+なので、パラメータを小分けにしてチューニングしていきます。  
+
+パラメーターチューニングには効率が良いとされる順番があるようです。[このサイト](http://kamonohashiperry.com/archives/209)によると、以下の順番でチューニングするのが良いそうです。  
+
+1. 学習率と木の数  
+2. 木に関するパラメーター：　max_depth, min_child_weight, gamma, subsample, colsample_bytree
+3. 正則化パラメータ: lambda, alphaなど  
+4. 学習率を下げる  
+
 ## Scikit-learn GridSearchCVのfit関数実行ログを見る  
 verbose=3にすると以下のログが出力される
 ```
