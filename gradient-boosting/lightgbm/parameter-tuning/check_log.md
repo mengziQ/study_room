@@ -13,7 +13,7 @@ Fitting 4 folds for each of 1728 candidates, totalling 6912 fits
 ・・・
 ```
 ### 実行時間の見積  
-totalling fitsの回数と、1回のfitのtotalの秒数を見ることで分かる。  
+totalling fitsの回数と、1回の交差検証のtotalの秒数を見ることで分かる。  
 上記の例であれば、
 ```
 6912　×　約16秒 = 110592秒 = 30.72時間  
