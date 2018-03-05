@@ -22,7 +22,7 @@ nthread=1でないとメモリエラーになった。
 - 学習データ数： 178300
 - テストデータ数: 44576
 
-nthread=4で実行できた。
+nthread=5で実行できた。
 ```
 ## [LightGBM] [Warning] bagging_fraction is set=0.7, subsample=0.8 will be ignored. Current value: bagging_fraction=0.7.   
 同じパラメータに対して、Scikit-learnAPIとLightGBMで別のパラメータ名を指定している可能性あり。  
