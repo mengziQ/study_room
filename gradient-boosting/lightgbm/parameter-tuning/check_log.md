@@ -12,3 +12,9 @@ Fitting 4 folds for each of 1728 candidates, totalling 6912 fits
 [CV]  subsample=0.7, reg_lambda=1, boosting_type=gbdt, n_estimators=1000, learning_rate=0.06, random_state=501, reg_alpha=1, num_leaves=31, objective=regression, colsample_bytree=0.7, score=0.9981020341201355, total=  16.5s
 ・・・
 ```
+### 実行時間の見積  
+totalling fitsの回数と、1回のfitのtotalの秒数を見ることで分かる。  
+上記の例であれば、
+```
+6912　×　約16秒 = 110592秒 = 30.72時間  
+```
