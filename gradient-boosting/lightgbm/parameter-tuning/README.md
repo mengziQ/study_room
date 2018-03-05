@@ -4,19 +4,20 @@
 nthreadで並列処理するスレッド数を決めることができ、公式ドキュメントではCPU数と同じにすることを推奨しているが、多分ほとんどエラーになるのでは？    
 少なくとも私の環境とデータ量ではメモリエラーになった。  
 ```
-実行環境１（参考）  
+**実行環境１（参考）**
 - メモリ：　１６GB
 - CPU: 4コア
 - 特徴量数: 2000
-→nthread=1でないとメモリエラーになった。
+
+nthread=1でないとメモリエラーになった。
 ```
 ```
-実行環境2（参考）  
+**実行環境2（参考）**  
 - メモリ：　32GB
 - CPU: 8コア
 - 特徴量数: 2000
-→nthread=4で実行できた。
 
+nthread=4で実行できた。
 ```
 ## [LightGBM] [Warning] bagging_fraction is set=0.7, subsample=0.8 will be ignored. Current value: bagging_fraction=0.7.   
 同じパラメータに対して、Scikit-learnAPIとLightGBMで別のパラメータ名を指定している可能性あり。  
