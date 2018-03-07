@@ -39,8 +39,7 @@ totalling fitsの回数と、1回の交差検証のtotalの秒数を見ること
 LightGBMのRegressionの例では1000になっていた。意味のある分類が1000パターンあるという解釈。  
 
 ### max_depth(木の深さ)  
-木の深さ。一つの木の中の分岐の数。  
-LightGBMのRegressionの例では31だったけどデータ数によってはもっと増やしても良いかも。  
+1つの木の深さ。LightGBMのRegressionの例では31だったけどデータ数によってはもっと増やしても良いかも。  
 
 ### colsample_bytreeとかfeature_fraction  
 1回のイテレーションで特徴量を何割を使用するかを指定する。過学習を防ぐ効果がある。  
