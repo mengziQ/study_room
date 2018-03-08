@@ -47,7 +47,7 @@ estimatorはcandidatesと同義だと思われる。Mean cross-validated score�
 LightGBMのRegressionの例では1000になっていた。意味のある分類が1000パターンあるという解釈。  
 
 ### max_depth(木の深さ)  
-1つの木の深さ。LightGBMのRegressionの例では31だったけどデータ数によってはもっと増やしても良いかも。  
+1つの木の深さ。LightGBMのRegressionの例では設定していない。デフォルトは-1で、これは無限に深くして良いという設定。  
 
 ### colsample_bytreeとかfeature_fraction  
 1回のイテレーションで特徴量を何割を使用するかを指定する。過学習を防ぐ効果がある。  
