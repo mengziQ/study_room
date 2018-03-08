@@ -31,12 +31,13 @@ totalling fitsの回数と、1回の交差検証のtotalの秒数を見ること
 6912　×　約16秒 = 110592秒 = 30.72時間  
 ```
 ### Fitting 4 folds for each of 1728 candidates, totalling 6912 fits  
-- folds: GridSearchCVインスタンス作成時に指定するパラメータ:cvの値。  
-- candidates: grid_paramsの組合せ数  
-- totalling: folds　× candidates  
+- folds: GridSearchCVインスタンス作成時に指定するパラメータ:cvの値。交差検証時にデータを何分割するか。  
+- candidates: grid_paramsの組合せ数  
+- totalling: folds　× candidates  
 
-### score  
-Mean cross-validated score of the best_estimator.
+### score  
+公式ドキュメントには「Mean cross-validated score of the best_estimator」とある。  
+estimatorはcandidatesと同義だと思われる。Mean cross-validated scoreはfoldした回数分のスコアの平均値。  
 
 ## 各パラメーターの値ってどれくらいがいいの？(調べ中)  
 ### learning_rate(学習率)  
