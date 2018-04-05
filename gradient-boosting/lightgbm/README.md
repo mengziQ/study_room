@@ -5,10 +5,7 @@
 ## 概要図  
 ![概要図](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/pics/overview.PNG)
 
-## 使用方法  
-**注意**  
-すごーく長いです。データ取得〜学習〜予測まで記載しました。  
-
+## 使用方法   
 ### 1. Google Adword　APIで入手したクリエイティブとCTR実績値を結合する  
 クリエイティブデータとCTR値は社内専用のAPIでGoogle Adwords APIを操作して取得しているためスクリプトは割愛します。  
 
@@ -26,6 +23,7 @@ $ python3 imgs_data.py -perform
 ```
 $ python3 imgs_data.py -image
 ```
+
 
 ### 2. クリエイティブ→画像タグへの変換    
 **使用したAPI**  
@@ -46,6 +44,7 @@ $ python3 vision/vision.py --minimize
 
 $ python3 vision/vision.py --scan
 ```
+
 
 ### 3. tag_idxの作成  
 クリエイティブへのタグ付けが終了したら、全タグを探索してidを振ります。スクリプトどっか消えました。  
@@ -72,6 +71,7 @@ $ python3 reduce_tag.py
 $ python3 kpi_tag.py ctr
 ```
 
+
 ### 5. LightGBMによる学習  
 インストール方法は[ここ](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/docs/installation.md)か公式githubを参照ください。  
 
@@ -80,12 +80,13 @@ $ cd ctr
 $ lightgbm config=train.conf
 ```
 
+
 ### 6. 予測
 ```
 $ cd ctr
 $ lightgbm config=predict.conf
 ```
 
-### 予測以降の作業工程  
 
+### 予測以降の作業工程  
 
