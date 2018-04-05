@@ -106,5 +106,10 @@ $ cd trend_analysis
 $ python3 find_vectors.py
 ```
 この時、そこそこCTRに影響がありそうなタグは排除しようと思いました。そこで色々試行錯誤した結果、重要度上位4つ目あたりまでの固定ならなんとかベクトルが見つかりそうだったので固定しました。  
+![要素固定イメージ](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/pics/find_vec.PNG)
+
+こんな感じで、とりあえず上位2タグ「product」「advertizing」についてCTRを上げるのか下げるのか検証した結果が以下になります。  
+![CTR影響](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/pics/cos_sim.PNG)
+上げるか下げるかくらいなら分かりそうですかね・・・？  
 
 
