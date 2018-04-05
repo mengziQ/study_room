@@ -25,23 +25,20 @@ $ python3 imgs_data.py -image
 
 
 ### 2. クリエイティブ→画像タグへの変換    
-**使用したAPI**  
-Google Cloud Vision API  
+**使用したAPI**   Google Cloud Vision API  
 
 まず、クリエイティブ画像(画像そのもの)をGoogle Cloud Vision APIに読み込ませるためにリサイズする  
 ```
+$ python3 vision/vision.py --minimize
 入力： クリエイティブ
 出力： 縮小or拡大したクリエイティブ画像(一辺が最大224ピクセルとなるようにリサイズ)
-
-$ python3 vision/vision.py --minimize
 ```
 
 リサイズしたクリエイティブのタグを検出する  
 ```
+$ python3 vision/vision.py --scan
 入力：　 リサイズしたクリエイティブ
 出力：　 画像タグ(json)
-
-$ python3 vision/vision.py --scan
 ```
 
 
