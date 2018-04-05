@@ -9,7 +9,7 @@
 クリエイティブデータとCTR値は社内専用のAPIでGoogle Adwords APIを操作して取得しているためスクリプトは割愛します。  
 
 以下のレポートから取得しています。  
-- クリエイティブデータ： MEDIA_SERVICE_WITH_IMAGE(調査中)  
+- クリエイティブデータ： MEDIA_SERVICE_WITH_IMAGE(リンク探し中)  
 - CTR値： [AD_PERFORMANCE_REPORT](https://developers.google.com/adwords/api/docs/appendix/reports/ad-performance-report)
 
 取得したCTR値(この時点では全てのパフォーマンスデータ)をjson形式に変換し、Ad IDが分かるようなファイル名に変更します。  
@@ -87,6 +87,13 @@ parameter_tuningフォルダを参照ください。
 
 ## 8. モデル検証結果  
 結論としては、CTRの予測精度はほとんど出ませんでした。。。  
+
+まずは、誤差率分布を調べました。(誤差率＝|実績値-予測値|/予測値 で計算)  
+```
+$ cd distribution
+$ python3 calc_distirbution.py
+```
+
 ![誤差率分布](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/pics/err_distribution.PNG)
 - 「CTR = クリック数/インプレッション数」なので、クリック数＝0の広告のCTRは0になるのですが、0.0000001(極小な値)を代入して学習させたところ、あまり学習がうまくいかなかった模様。。。  
 - 誤差率が(0.9〜1に限らず)全体的に出てしまっているため、もちろんクリック数0のデータだけの問題ではない  
