@@ -97,7 +97,14 @@ parameter_tuningフォルダを参照ください。
 ## 9. 追加調査  
 CTR値を直接予測することができなくても、タグがCTRを上げているか・下げているかだけでも当てられないか、調査をしました。  
 
-手始めに、CTR値に影響力を持つタグがあるかないかで上記検証を行いたいと思ったため、特徴量重要度を出しました。  
+手始めに、CTR値に影響力を持つタグがあるかないかで上記検証を行いたいと思ったため、特徴量重要度を出しました。(trend_analysis/feature_importance.ipynb参照)  
+![特徴量重要度](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/pics/feature_importances.png)
 
+まずは、全データの中から、最も重要度の高いタグ「product」があるベクトル(＝**基準ベクトル**とします)と、逆に「product」がないベクトルで基準ベクトルに最も類似したベクトルをコサイン類似度で算出します。  
+```
+$ cd trend_analysis
+$ python3 find_vectors.py
+```
+この時、そこそこCTRに影響がありそうなタグは排除しようと思いました。そこで色々試行錯誤した結果、重要度上位4つ目あたりまでの固定ならなんとかベクトルが見つかりそうだったので固定しました。  
 
 
