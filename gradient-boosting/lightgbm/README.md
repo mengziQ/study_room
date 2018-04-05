@@ -110,6 +110,6 @@ $ python3 find_vectors.py
 
 こんな感じで、とりあえず上位2タグ「product」「advertizing」についてCTRを上げるのか下げるのか検証した結果が以下になります。  
 ![CTR影響](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/pics/cos_sim.PNG)
-上げるか下げるかくらいなら分かりそうですかね・・・？  
-
+上げるか下げるかくらいなら分かりそうですかね・・・？  
+気が向いたら全タグについて同様の調査を行うスクリプトを作成します。。。  
 
