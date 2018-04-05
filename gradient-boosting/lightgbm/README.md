@@ -4,9 +4,8 @@
 
 ## 概要図  
 ![概要図](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/pics/overview.PNG)
-
-## 使用方法   
-### 1. Google Adword　APIで入手したクリエイティブとCTR実績値を結合する  
+   
+## 1. Google Adword　APIで入手したクリエイティブとCTR実績値を結合する  
 クリエイティブデータとCTR値は社内専用のAPIでGoogle Adwords APIを操作して取得しているためスクリプトは割愛します。  
 
 以下のレポートから取得しています。  
@@ -24,7 +23,7 @@ $ python3 imgs_data.py -image
 ```
 
 
-### 2. クリエイティブ→画像タグへの変換    
+## 2. クリエイティブ→画像タグへの変換    
 **使用したAPI**   Google Cloud Vision API  
 
 まず、クリエイティブ画像(画像そのもの)をGoogle Cloud Vision APIに読み込ませるためにリサイズする  
@@ -42,7 +41,7 @@ $ python3 vision/vision.py --scan
 ```
 
 
-### 3. tag_idxの作成  
+## 3. tag_idxの作成  
 クリエイティブへのタグ付けが終了したら、全タグを探索してidを振ります。スクリプトどっか消えました。  
 この後、諸々作業して精度が悪かったので特徴量を減らしました。その際にタグの出現頻度を調べたので、これが参考になるかもしれません笑  
 ```
@@ -57,7 +56,7 @@ $ python3 reduce_tag.py
 最終的なtag_idxはこちら → tag_idx2.pkl
 
 
-### 4. 画像タグ・実績CTRを結合してSVMファイルを作成    
+## 4. 画像タグ・実績CTRを結合してSVMファイルを作成    
 すごーく分かりづらいのですが、1でできたpickleファイル(パフォーマンスと画像配列)と2でできたjsonファイル(画像タグ)を画像名で照合しつつ、
 3で作ったtag_idx2.pklを使ってLightGBMに読み込ませるためのSVMファイルを作成します。  
 
@@ -68,7 +67,7 @@ $ python3 kpi_tag.py ctr
 ```
 
 
-### 5. LightGBMによる学習  
+## 5. LightGBMによる学習  
 インストール方法は[ここ](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/docs/installation.md)か公式githubを参照ください。  
 
 ```
@@ -77,16 +76,16 @@ $ lightgbm config=train.conf
 ```
 
 
-### 6. 予測
+## 6. 予測
 ```
 $ cd ctr
 $ lightgbm config=predict.conf
 ```
 
-### 7. 精度が良くないのでパラメーターチューニングをした  
+## 7. 精度が良くないのでパラメーターチューニングをした  
 parameter_tuningフォルダを参照ください。
 
-### 8. モデル検証結果  
+## 8. モデル検証結果  
 結論としては、CTRの予測精度はほとんど出ませんでした。。。  
 ![誤差率分布](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/pics/err_distribution.PNG)
 - 「CTR = クリック数/インプレッション数」なので、クリック数＝0の広告のCTRは0になるのですが、0.0000001を代入して学習させたところ、あまり学習がうまくいかなかった模様。。。  
@@ -95,8 +94,8 @@ parameter_tuningフォルダを参照ください。
 ![散布図](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/pics/scatter_plot.PNG)
 データはCTR＝0〜0.1の範囲にほぼ集合。赤枠の中のデータが少ないため、ほぼCTR値を当てられていないことになります。  
 
-### 9. 追加調査  
-タグがCTRを上げているか、下げているかだけでも当てられないか、調査をしました。  
+## 9. 追加調査  
+CTR値を直接予測することができなくても、タグがCTRを上げているか・下げているかだけでも当てられないか、調査をしました。  
 
 
 
