@@ -3,7 +3,7 @@
 クリエイティブをタグ要素に分解し、どのタグがCTRを上昇させているのか・もしくは下降させているのかを調べます。  
 
 ## 概要図  
-
+![概要図](https://github.com/mengziQ/study_room/blob/master/gradient-boosting/lightgbm/pics/overview.PNG)
 
 ## 使用方法  
 ### 1. クリエイティブ→画像タグへの変換    
